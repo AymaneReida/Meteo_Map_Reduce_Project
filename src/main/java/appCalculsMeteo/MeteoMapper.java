@@ -1,4 +1,4 @@
-package appCalculsEmployees;
+package appCalculsMeteo;
 
 import java.io.IOException;
 
@@ -48,7 +48,7 @@ public class MeteoMapper extends Mapper<LongWritable, Text, Text, MeteoWritable>
                 outputValue.setTempMax(temp);
                 String outputKey = vals[1].substring(0, 7);
                 context.write(new Text(outputKey), outputValue);
-                System.out.println("Map(" + outputKey + "," + outputValue);
+                System.out.println("Map(" + outputKey + "," + outputValue + ")");
             }
         }
     }

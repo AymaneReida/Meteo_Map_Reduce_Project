@@ -1,4 +1,4 @@
-package appCalculsEmployees;
+package appCalculsMeteo;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +21,7 @@ public class MeteoDriver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(MeteoWritable.class);
         job.setMapperClass(MeteoMapper.class);
+        // job.setCombinerClass(MeteoCombiner.class);
         job.setReducerClass(MeteoReducer.class);
         job.setJarByClass(MeteoDriver.class);
         FileInputFormat.addInputPath(job, new Path(args[0]));

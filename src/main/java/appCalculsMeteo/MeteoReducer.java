@@ -1,4 +1,4 @@
-package appCalculsEmployees;
+package appCalculsMeteo;
 
 import java.io.IOException;
 
@@ -15,18 +15,18 @@ public class MeteoReducer extends Reducer<Text, MeteoWritable, Text, MeteoWritab
         double speedWSum = 0;
         for (MeteoWritable val : values) {
             if (val.getNbreMesuresW() != 0) {
-                ++speedWCount;
+                speedWCount += val.getNbreMesuresW();
                 if (speedWMin == null || speedWMin > val.getSpeedWMin()) {
                     speedWMin = val.getSpeedWMin();
                 }
                 if (speedWMax == null || speedWMax < val.getSpeedWMax()) {
                     speedWMax = val.getSpeedWMax();
                 }
-                speedWSum = val.getSpeedWMax();
+                speedWSum += val.getSpeedWMax();
             }
 
             if (val.getNbreMesuresT() != 0) {
-                ++tempCount;
+                tempCount += val.getNbreMesuresT();
                 if (tempMin == null || tempMin > val.getTempMin()) {
                     tempMin = val.getTempMin();
                 }
