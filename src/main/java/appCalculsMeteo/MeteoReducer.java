@@ -22,7 +22,7 @@ public class MeteoReducer extends Reducer<Text, MeteoWritable, Text, MeteoWritab
                 if (speedWMax == null || speedWMax < val.getSpeedWMax()) {
                     speedWMax = val.getSpeedWMax();
                 }
-                speedWSum += val.getSpeedWMax();
+                speedWSum += val.getSpeedWMoy();
             }
 
             if (val.getNbreMesuresT() != 0) {
